@@ -1,0 +1,228 @@
+html,body{
+	font-family:  'Ubuntu', sans-serif;
+}
+
+.wrapper{
+	width: 100%;	
+	text-align: center;
+	padding-right: 15px;
+
+}
+.circle{
+	padding-top:46px;
+	background-color: #31b89d;
+	border-radius:50%;
+	height: 180px;
+	width: 180px;
+	box-shadow: 2px 3px 4px rgb(49, 184, 157,.2);
+}
+.circle:hover{
+	box-shadow:0px 0px 0px rgb(49, 184, 157,.2);
+	  border:2px solid #31b89d;
+        background-color:  rgba(38,43,49,.9);
+        
+}
+.start{
+	font-size:45px;
+	color: #fff;
+	font-weight: bolder;
+	letter-spacing: 2.5px;
+	font-family:  'Ubuntu', sans-serif;
+}
+.safety{
+	font-size: 24px;
+	letter-spacing: 1px;
+	color: #fff;
+	font-family:  'Ubuntu', sans-serif;
+  margin-top: 19px;
+}
+.header{
+		background-color: #31b89d;
+	width: 100%;
+	height: 55px;
+	letter-spacing: 1px;
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+}
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+
+ .dropdown-toggle::after {
+    display:none;
+}
+
+
+  .dark-wrap{
+  	width: 100%;
+	height:auto;
+	background-color: rgba(38,43,49,.9);
+	
+	box-shadow: 6px 20px 60px 20px grey;
+  }
+  .dark-wrap:hover{
+  		box-shadow: 0px 20px 0px 0px #f3f3f3;
+  		
+  }
+
+  #form-div{
+  	padding-left: 126px;
+  	padding-right:126px;
+  }
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    #form-div{
+       padding-left: 37px;
+       padding-right: 37px;
+    }
+}
+ 
+
+@media screen and (max-width: 495px) and (min-width: 465px){
+    #form-div{
+       padding-left: 92px;
+       padding-right: 92px;
+    }
+}
+@media screen and (max-width: 465px) and (min-width: 426px){
+    #form-div{
+       padding-left: 77px;
+       padding-right: 77px;
+    }
+}
+@media screen and (max-width: 425px) and (min-width: 400px){
+    #form-div{
+       padding-left: 62px;
+       padding-right: 62px;
+    }
+}
+@media screen and (max-width: 399px) and (min-width: 370px){
+    #form-div{
+       padding-left: 46px;
+       padding-right: 46px;
+    }
+}
+@media screen and (max-width: 369px) and (min-width: 352px){
+    #form-div{
+       padding-left: 35px;
+       padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 351px){
+    #form-div{
+       padding-left: 16px;
+       padding-right: 16px;
+    }
+    #title-size{
+    	font-size: 25px;
+    	padding-top:5px: 
+
+
+    }
+}
+@media screen and (max-width: 375px) and (min-width: 352px){
+    #head-font{
+     font-size: 27px;
+    }
+}
+@media screen and (max-width: 352px) and{
+    #head-font{
+     font-size: 20px;
+    }
+}
+
+.btn:focus{
+	outline: none;
+	border: none;
+}
+
+
+ .dropdown-toggle::after {
+    display:none;
+}
+
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+}
+#footer h5{
+  padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+  padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+  font-size:25px;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size:30px;
+  margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+  color:#ffffff;
+}
+#footer ul.social li a:hover{
+  color:#eeeeee;
+}
+#footer ul.quick-links li{
+  padding: 3px 0;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+  padding: 3px 0;
+  margin-left:5px;
+  font-weight:700;
+}
+#footer ul.quick-links li a i{
+  margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+  #footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+
+
+@media (min-width:992px){
+  .resp{
+    
+       padding-left: 30px;
+       padding-right: 30px;
+}
+}

@@ -1,0 +1,118 @@
+<!-- just for testing some features -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>containsLocation()</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    
+    
+    <div id="content"></div>
+    <script>
+    function handler(response) {
+    /*   for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // Either show the body or the automatic columns of the template
+        if (item.body) {
+          document.getElementById("content").innerHTML += "<br>" + item.body;
+        } else {
+          for (var j = 0; j < item.automaticColumnNames.length; j++) {
+            document.getElementById("content").innerHTML += "<br>" + item.automaticColumnNames[j];
+          }
+        }
+      } */
+      
+      localStorage.setItem("ftr",JSON.stringify(response));
+    }
+    </script>
+    
+    
+    <script type="text/javascript">
+    	var pos1=JSON.parse(localStorage.getItem("position"));
+    	
+    	var path=JSON.parse(localStorage.getItem("response"));
+    	var lat=JSON.parse(localStorage.getItem("lat"));
+    	var lng=JSON.parse(localStorage.getItem("lng"));
+    	var hotspots=JSON.parse(localStorage.getItem("ftr"));
+    	console.log(hotspots);
+    </script>
+    
+    
+    <script>
+      // This example requires the Geometry library. Include the libraries=geometry
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry">
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center:{lat:12.985876083374,lng:77.7446746826171},
+          zoom:13,
+        });
+
+        var triangleCoords = path.routes[0].overview_path;
+
+        var bermudaTriangle = new google.maps.Polygon({paths: triangleCoords});
+        
+        var flightPath = new google.maps.Polyline({
+            path: triangleCoords,
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+          });
+
+          flightPath.setMap(map);
+
+
+        for(var i=0 ; i< hotspots.rows.length; i++){
+        	  var c=hotspots.rows[i][0].split(",");
+              var point=new google.maps.LatLng(parseFloat(c[0]), parseFloat(c[1]));
+              var resultColor =
+                  google.maps.geometry.poly.isLocationOnEdge(point, flightPath, 0.001) ?
+                  'red' :
+                  'blue';
+
+              var resultPath =
+                  google.maps.geometry.poly.isLocationOnEdge(point, flightPath ,0.001) ?
+                  // A triangle.
+                  "m 0 -1 l 1 2 -2 0 z" :
+                  google.maps.SymbolPath.CIRCLE;
+      
+              new google.maps.Marker({
+                position: point,
+                map: map,
+                icon: {
+                  path: resultPath,
+                  fillColor: resultColor,
+                  fillOpacity: .5,
+                  strokeColor: 'white',
+                  strokeWeight: .5,
+                  scale: 10
+                }
+              });
+     
+          } ;     
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWG-y8hQMcEMKIqqZgvNeh0ZMsmRuf8zc&libraries=geometry&callback=initMap"
+         async defer></script>
+             <script src="https://www.googleapis.com/fusiontables/v2/query?sql=SELECT * FROM 1Es7H8MytCcfUdavm7j6v1JNVmtlXdC-QwJoImV6q&callback=handler&key=AIzaSyCWG-y8hQMcEMKIqqZgvNeh0ZMsmRuf8zc"></script>
+         
+  </body>
+</html>
