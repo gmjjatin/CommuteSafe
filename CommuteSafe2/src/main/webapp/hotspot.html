@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Commute Safe</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+ <!-- custom -->
+  <link rel="stylesheet" type="text/css" href="button.css">
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+ #googft-mapCanvas {
+  height: 450px;
+  
+  width: 100%;
+}
+</style>
+
+
+
+
+
+
+<!-- for rendering map -->
+<script type="text/javascript">
+  function initialize() {
+    /* var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
+      (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+    if (isMobile) {
+      var viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+    } */
+    var mapDiv = document.getElementById('googft-mapCanvas');
+  /*   mapDiv.style.width = isMobile ? '100%' : '100%';
+    mapDiv.style.height = isMobile ? '100%' : '450px';
+   */  var map = new google.maps.Map(mapDiv, {
+      center: new google.maps.LatLng(52.986152,-2.116006),
+      zoom: 6,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+
+    layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col2",
+        from: "1a6K_SdjF05xjXiFF2mcBDGUTXJF56q641uIrVYJj",
+        where: ""
+      },
+      options: {
+        styleId: 2,
+        templateId: 2
+      }
+    });
+
+    /* if (isMobile) {
+      var legend = document.getElementById('googft-legend');
+      var legendOpenButton = document.getElementById('googft-legend-open');
+      var legendCloseButton = document.getElementById('googft-legend-close');
+      legend.style.display = 'none';
+      legendOpenButton.style.display = 'block';
+      legendCloseButton.style.display = 'block';
+      legendOpenButton.onclick = function() {
+        legend.style.display = 'block';
+        legendOpenButton.style.display = 'none';
+      }
+      legendCloseButton.onclick = function() {
+        legend.style.display = 'none';
+        legendOpenButton.style.display = 'block';
+      }
+    } */
+  }
+
+  //google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+
+  
+<style>
+      .header{
+        background-color: #31b89d;
+        width: 100%;
+        height: 55px;
+        letter-spacing: 1px;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+      }
+
+      @media screen and (max-width: 351px){
+   
+    #title-size{
+      font-size: 23px;
+      padding-top: 5px; 
+
+    }
+}
+
+      </style>
+
+</head>
+<body>
+
+      <div class="container">
+
+         <section class="header">
+    <div style="text-align: center;padding-left:30px;padding-right:30px;" class="row">
+      <div style="float: left;width: 3%;"> <a href="home.html" style="text-decoration: none;color: #fff; "><i class="fas fa-arrow-left"></i></a></div>
+       
+       <div style="float: right;width: 93%;padding-top: 6px;"><h2 id="title-size" style="font-weight: bold;">Commute Safe</h2></div>
+       
+    </div>
+  </section>
+
+
+        <div class="dark-wrap" style="text-align: center;padding-right: 20px;padding-left: 20px;">
+         
+          
+            <div  id="googft-mapCanvas" style="padding-right: 20px;padding-left: 20px;">
+              
+            </div>
+
+           
+               
+
+        
+                    <!-- Footer -->
+  <section id="footer" style="padding-top: 15px;">
+    <div class="container">
+
+      <div style="width: 100%;text-align: center;margin-bottom: 25px;color: #fff;">
+        <h2>Our Team Members</h2>
+      </div>
+
+      <div class="row text-center text-xs-center text-sm-left text-md-left">
+        <div class="col-xs-12 col-sm-4 col-md-4 resp">
+          <h5>Jatin Sharma</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>B.Tech(IT)</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>MSIT(GGSIPU)</a></li>
+           
+            
+            
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 resp">
+          <h5>Ashutosh Senger</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>B.Tech(CSE)</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>MSIT(GGSIPU)</a></li>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 resp">
+          <h5>Gaurav Bhatt</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>B.Tech(IT)</a></li>
+            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>MSIT(GGSIPU)</a></li>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+     
+      <div class="row" style="padding-top: 30px;">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+         
+          <p class="h6">&copy Copyright 2018.All right Reversed.<a class="text-green ml-2" href="https://www.msit.in/" target="_blank">Msit</a></p>
+        </div>
+        </hr>
+      </div>  
+    </div>
+  </section>
+  <!-- ./Footer -->
+</div>
+
+<!-- map api -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWG-y8hQMcEMKIqqZgvNeh0ZMsmRuf8zc&libraries=places&language=en&callback=initialize"></script>
+
+
+  </body>
+  </html>
