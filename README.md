@@ -9,3 +9,8 @@ Currently the functional hotspots are - Bangalore ,India
 
 Functional hotspots: It refers to those hotspots which if present on any of the route that
 user searches out for , will be highlighted , will be counted  and the number will be displayed on the route card.
+
+User Interface : HTML ,CSS , javascript , Bootstrap ,JQuery
+Application Logic : javascript
+Deployed on : Google Cloud Platform
+API : Google maps javascript , geocoding , directions ,places , goemetry
