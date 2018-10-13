@@ -1,4 +1,4 @@
-# CommuteSafe
+# TravelSafe
 Its a navigation webapp that also provides accident hot-spots details on the route.
 
 MAIN FEATURE : Commuter can navigate safely as he will be cautioned in advance by the webapp of the accident hotspots on his/her route .
