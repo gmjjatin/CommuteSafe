@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Travel Safe</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+
+<!-- vendor -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+	integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+	crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+
+
+<!-- custom -->
+<link rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="js/index.js">
+	
+</script>
+
+</head>
+<body>
+
+	<div class="container">
+
+		<section class="header">
+			<div style="text-align: center; padding-left: 30px; padding-right: 30px;"
+				class="row">
+				<div style="float: left; width: 3%;">
+					<div class="dropdown">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" id="head-font">
+							<i class="fas fa-bars"></i>
+						</button>
+						<div class="dropdown-menu"
+							style="background-color: #31b89d !important:">
+							<a class="dropdown-item" href="UKHotspots.html">UK Hotspots</a>
+							<a class="dropdown-item" href="bangaloreHotspots.html">Bangalore Hotspots</a>
+						</div>
+
+					</div>
+				</div>
+
+				<div style="float: right; width: 93%; padding-top: 6px;">
+					<h2 id="title-size" style="font-weight: bold;">Travel Safe</h2>
+				</div>
+
+			</div>
+		</section>
+
+
+		<div class="dark-wrap">
+
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6" style="margin-left: 5%; text-align: center;">
+					<p class="safety">Let's drive safely to your destination !</p>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+
+
+			<div class="row" style="margin: 1%;">
+				<div class="col-md-3"></div>
+				<div class="col-md-5" id="form-div">
+
+					<input id="origin-input" class="controls" type="text"
+						placeholder="Enter an origin location" data-toggle="dropdown">
+					<!-- button for current location -->
+
+					<div class="dropdown-menu"
+						style="background-color: #31b89d !important:">
+						<button id="currentLocationHome"
+							style="text-decoration: none; color: #555; background: none;"
+							class="dropdown-item" onclick="currentLocationForInputBoxAtIndexPage()">
+							My Current Location <i class="fas fa-crosshairs"
+								style="position: absolute; right: 5px;"></i>
+						</button>
+
+					</div>
+					<!-- script for current location button -->
+					<script type="text/javascript" src="js/currentLocationFinder.js"></script>
+
+					<input id="destination-input" class="controls" type="text"
+						placeholder="Enter a destination location" data-toggle="dropdown">
+
+
+					<div id="mode-selector" class="controls" >
+						<input type="radio" name="type" id="changemode-walking"> <label
+							for="changemode-walking">Walking</label> <input type="radio"
+							name="type" id="changemode-transit"> <label
+							for="changemode-transit">Transit</label> <input type="radio"
+							name="type" id="changemode-driving"> <label
+							for="changemode-driving">Driving</label>
+					</div>
+
+
+				</div>
+				<div class="col-md-4"></div>
+
+			</div>
+
+			<div style="margin-top: 10px; padding-bottom: 100px;">
+
+
+				<div class="wrapper">
+					<a href="routes.html"
+						style="text-decoration: none; display: inline-block;">
+						<div class="circle front face">
+							<p class="start">Start</p>
+						</div>
+
+
+					</a>
+				</div>
+			</div>
+
+			<div id="map" style="visibility: hidden;"></div>
+
+			<!-- Footer -->
+			<section id="footer" style="padding-top: 15px;">
+				<div class="container">
+
+					<div id="OurTeamMembers" class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+						<h2>Team : MSIT</h2>
+					</div>
+
+					<div class="row text-center text-xs-center text-sm-center text-md-center">
+						<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white resp">
+							<h5>Jatin Sharma</h5>
+							<ul class="list-unstyled quick-links">
+								<li><a href="javascript:void();"><i
+										class="fa fa-angle-double-right"></i>B.Tech(IT 3 Year)</a></li>
+								<li><a href="javascript:void();"><i
+										class="fa fa-angle-double-right"></i>MSIT(GGSIPU)</a></li>
+
+
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="row" >
+						<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+							<p class="h6">
+								&copy; Copyright 2018.All right Reserved.<a
+									class="text-green ml-2" href="https://www.msit.in/"
+									target="_blank">Msit</a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- ./Footer -->
+		</div>
+
+	</div>
+
+
+
+	<!-- handler for the response from the fusion table api -->
+	<script type="text/javascript" src="js/fusionTableResponseHandler.js" ></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8kxOQBen7WGGK80Ou0oSa_esnivbUtYQ&libraries=places&callback=giveMeResultsOfRoutes"
+		async defer></script>
+		
+		<!-- fusion table api -->
+	 <script src="https://www.googleapis.com/fusiontables/v2/query?sql=SELECT * FROM 1Es7H8MytCcfUdavm7j6v1JNVmtlXdC-QwJoImV6q&callback=handler&key=AIzaSyCWG-y8hQMcEMKIqqZgvNeh0ZMsmRuf8zc"></script>
+
+</body>
+</html>

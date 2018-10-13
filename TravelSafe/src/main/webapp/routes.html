@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Safe</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+ <!-- vendor -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ 
+  
+  
+<!-- custom -->
+  <link rel="stylesheet" type="text/css" href="css/button.css">
+   <link rel="stylesheet" href="css/routes.css">
+   
+    <!-- custom css -->
+    <style>
+      
+      </style>
+
+</head>
+
+<body>
+
+      <div class="container">
+
+     <section class="header">
+    <div style="text-align: center;padding-left:30px;padding-right:30px;" class="row">
+      <div style="float: left;width: 3%;"> <a href="index.html" style="text-decoration: none;color: #fff; "><i class="fas fa-arrow-left"></i></a></div>
+       
+       <div style="float: right;width: 93%;padding-top: 6px;"><h2 id="title-size" style="font-weight: bold;">Travel Safe</h2></div>
+       
+    </div>
+  </section>
+
+        <div class="dark-wrap">
+<script type="text/javascript">
+var resp= JSON.parse(localStorage.getItem("response"));
+var maps=new Array(resp.routes.length);
+</script>
+
+ 	<!-- divs for multiple cards -->        
+          <div id="cd0"></div>
+          
+          <div id="cd1"></div>
+          <div id="cd2"></div>
+          <div id="cd3"></div>
+          <div id="cd4"></div>
+          <div id="cd5"></div>
+          <div id="cd6"></div>
+          <div id="cd7"></div>
+          <div id="cd8"></div>
+          <div id="cd9"></div>
+        
+
+          <!-- Footer -->
+  <section id="footer" style="padding-top: 15px;">
+				<div class="container">
+
+					<div id="OurTeamMembers" class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+						<h2>Team : MSIT</h2>
+					</div>
+
+					<div class="row text-center text-xs-center text-sm-center text-md-center">
+						<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white resp">
+							<h5>Jatin Sharma</h5>
+							<ul class="list-unstyled quick-links">
+								<li><a href="javascript:void();"><i
+										class="fa fa-angle-double-right"></i>B.Tech(IT 3 Year)</a></li>
+								<li><a href="javascript:void();"><i
+										class="fa fa-angle-double-right"></i>MSIT(GGSIPU)</a></li>
+
+
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="row" >
+						<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+							<p class="h6">
+								&copy; Copyright 2018.All right Reserved.<a
+									class="text-green ml-2" href="https://www.msit.in/"
+									target="_blank">Msit</a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</section>  <!-- ./Footer -->
+
+</div>
+
+		<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Safety Reminder</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-Content">
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+		
+		
+<!-- modal ends -->
+
+
+<!-- modal js -->
+<script type="text/javascript" src="js/modal.js"></script>
+<!-- to sort routes based on min. accident hotspots -->
+ <script type="text/javascript" src="js/sort.js"></script>
+
+
+
+<!-- to display multiple cards on the document -->
+ <script type="text/javascript" src="js/cards.js"></script>
+ 
+ <!-- helps in implementing current location -->
+  <script type="text/javascript" src="js/currentLocationFinder.js"></script>
+
+<!-- to toggle a card on the document -->
+<script type="text/javascript" src="js/toggle.js"></script>
+
+
+ </div>
+
+
+
+
+<!-- Helps in displaying map , route , add accident hot-spot 
+layer to the map ,and all these to the corresponding div of card -->
+	<script src="js/routes.js"></script>
+  	
+  	<!-- Helps in spotting those accident hot-spots which are on 
+  	the route in the corresponding card -->
+  	<script src="js/geometry.js"></script>
+
+
+
+ <!-- handler for the response from the fusion table api -->
+	<script type="text/javascript" src="js/fusionTableResponseHandler.js" ></script>
+	
+ 
+ <!--map api-->
+   	<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA8kxOQBen7WGGK80Ou0oSa_esnivbUtYQ&libraries=places,geometry&language=en&callback=initializeMapsInCards"
+    		async defer></script>
+    		
+    		<!-- fusion table api -->
+	 <script src="https://www.googleapis.com/fusiontables/v2/query?sql=SELECT * FROM 1Es7H8MytCcfUdavm7j6v1JNVmtlXdC-QwJoImV6q&callback=handler&key=AIzaSyCWG-y8hQMcEMKIqqZgvNeh0ZMsmRuf8zc"></script>
+    
+    
+  </body>
+  </html>
