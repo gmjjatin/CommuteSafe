@@ -46,6 +46,12 @@
           var content="<p>Number of hotspots:</p>"+hotspots.rows[j][1]+"<p>Red Triangle means the accident spot is on your route ,otherwise not.</p>";
           //infowindow
         infowindow = new google.maps.InfoWindow();
+
+        //custom marker js
+
+        
+        
+        
           
           
   		//add click event on marker
